@@ -1,5 +1,8 @@
 'use strict';
 
+// this code is currently broken as of 6/6/2018 @ 9:08pm and I have tried really hard to figure out
+//  why it won't run but couldn't prevail
+
 alert ('Please answer the following questions with Yes or No answers');
 
 var abduction = prompt('Have I ever been abducted by aliens?').toLowerCase();
@@ -51,6 +54,54 @@ var pulpFiction = prompt('Have I seen Pulp Fiction so much that I can recite Sam
     }
     console.log('Do they think I\'ve seen Pulp Fiction waaaay too many times?',pulpFiction)
 
+// this next section satisfies the "numbered guess" project requirement
+// the number of guinea pigs I've owned
 
+var pigNumber = 5;
+
+// Prompt for user to make a guess
+var howManyPigs = parseInt(prompt('You have 4 guesses to find out how many Guinea Pigs I\'ve owned.'));
+
+
+for(var i = 0; i < 4; i++) {
+    console.log(howManyPigs);
+    console.log('howManyPigs is referring to:', pigNumber);
+  if(howManyPigs === pigNumber) {
+    alert('Exactly right! You must be psychic.');
+    break;
+
+  } else if (howManyPigs < pigNumber) {
+    alert('That\s way too low!');
+    howManyPigs = parseInt(prompt ('Try again'));
+
+  } else if (howManyPigs > pigNumber) {
+    alert ('That\'s way too many!');
+    howManyPigs = parseInt(prompt ('Try again'));
+
+  } else {
+    console.log('you have reached the end of the guesses');
+    alert("Please enter a number")
+  } 
+}
+// this next section addresses the "guess my car in an array" project requirement
+//array that holds the cars I've owned
+var ownedCars = ['honda', 'toyota', 'chevy', 'subaru'] 
+
+// prompt the user to guess the make of a car I've owned 
+var carGuess = prompt('Can you guess the make (not model) of a car I\'ve owned?').toLowerCase();
+
+for(var i = 0; i <= 6; i++) {
+  console.log('i is referring to:', ownedCars);
+  // compares what the user entered to all of the elements in the array
+  if(owedCars.includes(carGuess)) {
+    // indicates a correct guess 
+    alert('Wow, nice guess!');
+  } else {
+    // indicates a wrong guess
+    alert('Nope. Try again.');
+    carguess = prompt ('Can you guess the make (not model) of a car I\'ve owned?').toLowerCase();
+  } 
+}
+alert('You ran out of guesses!');
 
   
