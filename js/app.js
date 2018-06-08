@@ -1,7 +1,5 @@
 'use strict';
 
-// // this code is currently broken as of 6/6/2018 @ 9:08pm and I have tried really hard to figure out
-// //  why it won't run but couldn't prevail
 var pointsTracker = 0;
 
 // Question 1
@@ -98,11 +96,11 @@ function pigsGame () {
     }
     if (howManyPigs < pigNumber) {
       alert('That\'s way too low!');
-      howManyPigs = parseInt(prompt ('Try again'));
+      alert('Try again');
     }
     if (howManyPigs > pigNumber) {
       alert ('That\'s way too many!');
-      howManyPigs = parseInt(prompt ('Try again'));
+      alert ('Try again');
     }
     if (totalGuesses === 4) {
       alert('you ran out of guesses!');
@@ -116,25 +114,29 @@ pigsGame();
 //array that holds the cars I've owned
 
 function carsGame () {
-  var ownedCars = ['honda', 'toyota', 'chevy', 'subaru']
+  var ownedCars = ['honda', 'toyota', 'chevy', 'subaru'];
+  var cGuessesTrack = 0;
+
+  for(var i = 0; i < 6; i++) {
+    var carGuess = prompt('Can you guess the make (not model) of a car I\'ve owned?').toLowerCase();    
+      console.log('i is referring to:', ownedCars);
 
   // prompt the user to guess the make of a car I've owned
-  var carGuess = prompt('Can you guess the make (not model) of a car I\'ve owned?').toLowerCase();
-
-  for(var i = 0; i <= 6; i++) {
-    console.log('i is referring to:', ownedCars);
-    // compares what the user entered to all of the elements in the array
+  // compares what the user entered to all of the elements in the array
     if(ownedCars.includes(carGuess)) {
-    // indicates a correct guess
+      // indicates a correct guess
       alert('Wow, nice guess!');
       pointsTracker = pointsTracker + 1;
       break;
     } else {
-    // indicates a wrong guess
-      alert('Nope. Try again.');
-      carGuess = prompt ('Can you guess the make (not model) of a car I\'ve owned?').toLowerCase();
-      alert('You ran out of guesses!');
-      // when you answer wrong the prompts go nope try again -> you ran out of guesses -> and then back to the prompt to try again
+      cGuessesTrack++
+      console.log(cGuessesTrack);
+      continue;
+      if (cGuessesTrack = 6) {
+        alert('You ran out of guesses!');
+        break;
+ // when you answer wrong the prompts go nope try again -> you ran out of guesses -> and then back to the prompt to try again
+      }
     }
   }
 }
