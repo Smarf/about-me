@@ -1,0 +1,33 @@
+html * {
+  font-family: 'helvetica', sans-serif;
+  font-size: 16px;
+}
+body {
+  background: linear-gradient(to bottom right, orange, #008080);
+}
+p.about-me {
+  text-align: center;
+  text-indent: 50px;
+  margin-bottom: 50px;
+}
+
+p {
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-left: 100px;
+  padding-top: 14px;
+  text-indent: -1.4em;
+}
+
+ol {
+  list-style-type: decimal;
+  list-style-position: outside;
+  margin-left: 95px;
+  padding-top: 14px;
+  text-indent: 0.2em;
+}
+
